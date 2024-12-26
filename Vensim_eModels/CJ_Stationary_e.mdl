@@ -1,0 +1,798 @@
+{UTF-8}
+Average Enrollments =
+	212766
+	~	Person
+	~		|
+
+Accumulated 7iD Members= INTEG (
+	New 7iD Members,
+		4.68e+06)
+	~	Person*Week
+	~	2018年6月7iD会員数468万人
+	~	:SUPPLEMENTARY 
+	|
+
+Entry Customers= INTEG (
+	New Entry-Apps Withdrawals Initial-Growth Customers Experience,
+		4.68e+06)
+	~	Person*Week
+	~		|
+
+New Entry=
+	Average Enrollments
+	~	Person
+	~		|
+
+New 7iD Members=
+	New Entry
+	~	Person
+	~		|
+
+High Frequency Low Purchasing Customers= INTEG (
+	Fulfillment Experience+Retrograding HFLP Experience+HFLP Experience-Apps Withdrawals 2nd\
+		-Attracted Experience,
+		0)
+	~	Person*Week
+	~		|
+
+Low Frequency High Purchasing Customers= INTEG (
+	LFHP Experience+Dissatisfying Experience+Retrograding LFHP Experience-High Satisfying Experience\
+		-Apps Withdrawals 3rd,
+		0)
+	~	Person*Week
+	~		|
+
+Retrograding LFHP Experience=
+	Excellent Customers*Retrograding LFHP Experience Rate
+	~	Person
+	~		|
+
+Excellent Customers= INTEG (
+	True Loving Experience-Stationary Experience-Retrograding HFLP Experience-Retrograding LFHP Experience\
+		-Apps Withdrawals 5th,
+		0)
+	~	Person*Week
+	~		|
+
+Retrograding LFHP Experience Rate=
+	0.015
+	~	1/Week
+	~		|
+
+Retrograding HFLP Experience Rate=
+	0.01
+	~	1/Week
+	~		|
+
+Retrograding HFLP Experience=
+	Excellent Customers*Retrograding HFLP Experience Rate
+	~	Person
+	~		|
+
+Stationary Experience=
+	Excellent Customers*Stationary Experience　Rate
+	~	Person
+	~		|
+
+True Loving Experience=
+	Quasi Excellent Customers*True Loving Experience Rate
+	~	Person
+	~		|
+
+Dissatisfying Experience=
+	Quasi Excellent Customers*Dissatisfying Experience Rate
+	~	Person
+	~		|
+
+Dissatisfying Experience Rate=
+	0.02
+	~	1/Week
+	~		|
+
+LFHP Experience=
+	Growth Customers*LFHP Experience Rate
+	~	Person
+	~		|
+
+Quasi Excellent Customers= INTEG (
+	High Satisfying Experience+Attracted Experience+Stationary Experience-Dissatisfying Experience\
+		-Fulfillment Experience-True Loving Experience-Apps Withdrawals 4th,
+		0)
+	~	Person*Week
+	~		|
+
+Growth Customers= INTEG (
+	Growth Customers Experience-HFLP Experience-LFHP Experience-Apps Withdrawals 1st,
+		0)
+	~	Person*Week
+	~		|
+
+Total Withdrawals=
+	Apps Withdrawals Initial+Apps Withdrawals 1st+Apps Withdrawals 2nd+Apps Withdrawals 3rd\
+		+Apps Withdrawals 4th+Apps Withdrawals 5th
+	~	Person
+	~		~	:SUPPLEMENTARY 
+	|
+
+Attracted Experience Rate=
+	0.1
+	~	1/Week
+	~		|
+
+High Satisfying Experience Rate=
+	0.1
+	~	1/Week
+	~		|
+
+Apps Withdrawals 2nd=
+	High Frequency Low Purchasing Customers*Withdrawal Rate 2nd
+	~	Person
+	~		|
+
+Fulfillment Experience=
+	Quasi Excellent Customers*Fulfillment Experience　Rate
+	~	Person
+	~		|
+
+Apps Withdrawals 4th=
+	Quasi Excellent Customers*Withdrawal Rate 4th
+	~	Person
+	~		|
+
+Attracted Experience=
+	High Frequency Low Purchasing Customers*Attracted Experience Rate
+	~	Person
+	~		|
+
+High Satisfying Experience=
+	Low Frequency High Purchasing Customers*High Satisfying Experience Rate
+	~	Person
+	~		|
+
+Fulfillment Experience　Rate=
+	0.1
+	~	1/Week
+	~		|
+
+Stationary Experience　Rate=
+	0.01
+	~	1/Week
+	~		|
+
+Quasi Excellent Customers Sales Ratio=
+	Quasi Excellent Customers Sales/Total Sales
+	~	dmnl
+	~		~	:SUPPLEMENTARY 
+	|
+
+Quasi Excellent Customers Sales=
+	Quasi Excellent Average Purchase Amounts*Quasi Excellent Users
+	~	Week*Yen
+	~		|
+
+HFLP Customers Sales=
+	HFLP Average Purchase Amounts*HFLP Users
+	~	Week*Yen
+	~		|
+
+Growth Average Purchase Amounts=
+	600
+	~	Yen/Person
+	~	月平均購買金額7233円
+		週平均金額=7233/4=1808.25円
+	|
+
+LFHP Average Purchase Amounts=
+	4000
+	~	Yen/Person
+	~	月平均購買金額7233円
+		週平均金額=7233/4=1808.25円
+		1001 <= 低頻高購平均購買金額 = 4000  <= 4000
+	|
+
+LFHP Customers Sales Ratio=
+	LFHP Customers Sales/Total Sales
+	~	dmnl
+	~		~	:SUPPLEMENTARY 
+	|
+
+LFHP Customers Sales=
+	LFHP Average Purchase Amounts*LFHP Users
+	~	Week*Yen
+	~		|
+
+Excellent Average Purchase Amounts=
+	7500
+	~	Yen/Person
+	~	月平均購買金額7233円
+		週平均金額=7233/4=1808.25円
+		3501 <= 優良平均購買金額 = 7500  <= 7500
+	|
+
+Excellent Customers Sales Ratio=
+	Excellent Customers Sales/Total Sales
+	~	dmnl
+	~		~	:SUPPLEMENTARY 
+	|
+
+Excellent Customers Sales=
+	Excellent Average Purchase Amounts*Excellent Users
+	~	Week*Yen
+	~		|
+
+Quasi Excellent Average Purchase Amounts=
+	3200
+	~	Yen/Person
+	~	月平均購買金額7233円
+		週平均金額=7233/4=1808.25円
+		1001 <= 準優良平均購買金額 = 3200  <= 3200
+	|
+
+Entry Customers Sales=
+	Entry Average Purchase Amounts*Entry Users
+	~	Week*Yen
+	~		|
+
+HFLP Customers Sales Ratio=
+	HFLP Customers Sales/Total Sales
+	~	dmnl
+	~		~	:SUPPLEMENTARY 
+	|
+
+HFLP Average Purchase Amounts=
+	1000
+	~	Yen/Person
+	~	月平均購買金額7233円
+		週平均金額=7233/4=1808.25円
+		601 <= 高頻低購平均購買金額 = 1000  <= 1000
+	|
+
+Growth Customers Sales Ratio=
+	Growth Customers Sales/Total Sales
+	~	dmnl
+	~		~	:SUPPLEMENTARY 
+	|
+
+Growth Customers Sales=
+	Growth Average Purchase Amounts*Growth Users
+	~	Week*Yen
+	~		|
+
+Entry Customers Sales Ratio=
+	Entry Customers Sales/Total Sales
+	~	dmnl
+	~	金額売上構成比エントリー0.8％
+	~	:SUPPLEMENTARY 
+	|
+
+Entry Average Purchase Amounts=
+	70
+	~	Yen/Person
+	~	月平均購買金額7233円
+		週平均金額=7233/4=1808.25円
+		70 <= エントリー平均購買金額 = 70  <= 300
+	|
+
+LFHP Experience Rate=
+	0.0198
+	~	1/Week
+	~		|
+
+True Loving Experience Rate=
+	0.044
+	~	1/Week
+	~		|
+
+SeveniDUsers
+	~	Person*Week
+	~		~	:SUPPLEMENTARY 
+	|
+
+Entry Customers Ratio=
+	Entry Users/Total Users
+	~	dmnl
+	~	エントリ―顧客比率12.5%
+	~	:SUPPLEMENTARY 
+	|
+
+Excellent Customers Ratio=
+	Excellent Users/Total Users
+	~	dmnl
+	~	優良顧客比率7.5%
+	~	:SUPPLEMENTARY 
+	|
+
+HFLP Experience=
+	Growth Customers*HFLP Experience Rate
+	~	Person
+	~		|
+
+HFLP Experience Rate=
+	0.0474
+	~	1/Week
+	~		|
+
+LFHP Customers Ratio=
+	LFHP Users/Total Users
+	~	dmnl
+	~	低頻度高購買顧客比率7.6%
+	~	:SUPPLEMENTARY 
+	|
+
+Entry Users=
+	Entry Customers
+	~	Person*Week
+	~		|
+
+Growth Customers Ratio=
+	Growth Users/Total Users
+	~	dmnl
+	~	成長顧客比率37.8%
+	~	:SUPPLEMENTARY 
+	|
+
+LFHP Users=
+	Low Frequency High Purchasing Customers
+	~	Person*Week
+	~		|
+
+HFLP Users=
+	High Frequency Low Purchasing Customers
+	~	Person*Week
+	~		|
+
+Excellent Users=
+	Excellent Customers
+	~	Person*Week
+	~		|
+
+Quasi Excellent Customers Ratio=
+	Quasi Excellent Users/Total Users
+	~	dmnl
+	~	準優良顧客比率14.1%
+	~	:SUPPLEMENTARY 
+	|
+
+Quasi Excellent Users=
+	Quasi Excellent Customers
+	~	Person*Week
+	~		|
+
+Growth Users=
+	Growth Customers
+	~	Person*Week
+	~		|
+
+HFLP Customers Ratio=
+	HFLP Users/Total Users
+	~	dmnl
+	~	高頻度抵購買比率20.6%
+	~	:SUPPLEMENTARY 
+	|
+
+Withdrawal Rate 4th=
+	0.02
+	~	1/Week
+	~		|
+
+Total Sales=
+	Average Purchase Amounts*Total Users
+	~	Yen*Week
+	~	週次売上総額
+	|
+
+Apps Withdrawals 1st=
+	Growth Customers*Withdrawal Rate 1st
+	~	Person
+	~		|
+
+Apps Withdrawals 3rd=
+	Low Frequency High Purchasing Customers*Withdrawal Rate 3rd
+	~	Person
+	~		|
+
+Apps Withdrawals 5th=
+	Excellent Customers*Withdrawal Rate 5th
+	~	Person
+	~		|
+
+Apps Withdrawals Initial=
+	Entry Customers*Withdrawal Rate Initial
+	~	Person
+	~		|
+
+Average Purchase Amounts=
+	1808.25
+	~	Yen/Person
+	~	月平均購買金額7233円
+		週平均金額=7233/4=1808.25円
+	|
+
+Total Users=
+	Entry Customers+Growth Customers+High Frequency Low Purchasing Customers+Low Frequency High Purchasing Customers\
+		+Quasi Excellent Customers+Excellent Customers
+	~	Person*Week
+	~	週次ユーザー総数
+	|
+
+Withdrawal Rate 3rd =
+	0.02
+	~	1/Week
+	~		|
+
+Withdrawal Rate 5th=
+	0.02
+	~	1/Week
+	~		|
+
+Withdrawal Rate 1st=
+	0.002
+	~	1/Week
+	~		|
+
+Withdrawal Rate 2nd =
+	0.02
+	~	1/Week
+	~		|
+
+Withdrawal Rate Initial=
+	0.01
+	~	1/Week
+	~		|
+
+Growth Customers Experience=
+	Entry Customers*Growth Customers Experience Rate
+	~	Person
+	~		|
+
+Growth Customers Experience Rate=
+	0.08
+	~	1/Week
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		シミュレーション制御パラメータ
+	|
+
+FINAL TIME  = 47
+	~	Week
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Week
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 1
+	~	Week [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.015625
+	~	Week [0,?]
+	~	シミュレーションの時間ステップ
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*表示 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,75,0
+10,1,Entry Customers,416,341,44,22,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Growth Customers,606,340,50,21,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,3,5,2,4,0,0,22,0,0,0,-1--1--1,,1|(530,339)|
+1,4,5,1,100,0,0,22,0,0,0,-1--1--1,,1|(476,339)|
+11,5,0,499,339,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Growth Customers Experience,499,373,39,26,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,Growth Customers Experience Rate,531,240,52,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,8,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(466,295)|
+1,9,7,6,1,0,0,0,0,64,0,-1--1--1,,1|(509,325)|
+12,10,48,410,481,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,11,13,10,4,0,0,22,0,0,0,-1--1--1,,1|(410,451)|
+1,12,13,1,100,0,0,22,0,0,0,-1--1--1,,1|(410,390)|
+11,13,0,410,424,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,14,Apps Withdrawals Initial,475,424,57,24,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,1,13,1,0,0,0,0,64,0,-1--1--1,,1|(383,387)|
+12,16,48,605,481,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,19,16,4,0,0,22,0,0,0,-1--1--1,,1|(607,452)|
+1,18,19,2,100,0,0,22,0,0,0,-1--1--1,,1|(607,390)|
+11,19,0,607,425,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,20,Apps Withdrawals 1st,664,425,49,27,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,21,2,20,1,0,0,0,0,64,0,-1--1--1,,1|(577,389)|
+10,22,Apps Withdrawals Initial,1917,793,91,18,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,23,Apps Withdrawals 1st,1893,840,88,14,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,24,Withdrawal Rate Initial,401,516,41,21,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,25,24,13,1,0,0,0,0,64,0,-1--1--1,,1|(366,439)|
+10,26,Withdrawal Rate 1st,576,525,44,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,27,26,19,1,0,0,0,0,64,0,-1--1--1,,1|(560,475)|
+10,28,High Frequency Low Purchasing Customers,861,210,75,25,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,29,Withdrawal Rate 2nd,720,106,43,24,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,30,Low Frequency High Purchasing Customers,854,347,76,30,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,31,48,815,520,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,34,31,4,0,0,22,0,0,0,-1--1--1,,1|(822,491)|
+1,33,34,30,100,0,0,22,0,0,0,-1--1--1,,1|(822,417)|
+11,34,0,822,464,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,35,Apps Withdrawals 3rd,876,464,46,28,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,36,30,35,1,0,0,0,0,64,0,-1--1--1,,1|(844,450)|
+10,37,Withdrawal Rate 3rd,767,518,42,20,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,38,37,34,1,0,0,0,0,64,0,-1--1--1,,1|(784,481)|
+10,39,Quasi Excellent Customers,1269,209,78,24,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,40,Withdrawal Rate 4th,1481,174,44,18,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,41,Excellent Customers,1278,342,76,23,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,42,48,1260,486,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,45,42,4,0,0,22,0,0,0,-1--1--1,,1|(1260,452)|
+1,44,45,41,100,0,0,22,0,0,0,-1--1--1,,1|(1260,389)|
+11,45,0,1260,420,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,46,Apps Withdrawals 5th,1316,420,48,26,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,47,41,46,1,0,0,0,0,64,0,-1--1--1,,1|(1273,425)|
+10,48,Withdrawal Rate 5th,1336,487,43,18,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,49,48,45,1,0,0,0,0,64,0,-1--1--1,,1|(1306,468)|
+1,50,52,28,4,0,0,22,0,0,0,-1--1--1,,1|(740,211)|
+1,51,52,2,100,0,0,22,0,0,0,-1--1--1,,1|(606,211)|
+11,52,0,689,211,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,53,HFLP Experience,689,238,40,19,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,54,2,52,1,0,0,0,0,64,0,-1--1--1,,1|(616,257)|
+10,55,Average Purchase Amounts,1922,415,88,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,56,Total Users,1736,574,56,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,57,Total Sales,1742,467,47,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,58,55,57,1,0,0,0,0,64,0,-1--1--1,,1|(1753,454)|
+1,59,56,57,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+10,60,Entry Customers,1891,482,76,14,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,61,Growth Customers,1908,523,80,18,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,62,High Frequency Low Purchasing Customers,1902,572,80,21,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,63,Low Frequency High Purchasing Customers,1903,619,85,25,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,64,Quasi Excellent Customers,1902,670,98,20,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,65,Excellent Customers,1884,720,72,19,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,66,60,56,1,0,0,0,0,64,0,-1--1--1,,1|(1772,520)|
+1,67,61,56,1,0,0,0,0,64,0,-1--1--1,,1|(1796,542)|
+1,68,62,56,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,69,63,56,1,0,0,0,0,64,0,-1--1--1,,1|(1779,612)|
+1,70,64,56,1,0,0,0,0,64,0,-1--1--1,,1|(1757,629)|
+1,71,65,56,1,0,0,0,0,64,0,-1--1--1,,1|(1731,626)|
+10,72,Total Withdrawals,1762,884,54,21,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,73,22,72,1,0,0,0,0,64,0,-1--1--1,,1|(1769,837)|
+1,74,23,72,1,0,0,0,0,64,0,-1--1--1,,1|(1788,847)|
+10,75,Apps Withdrawals 3rd,1904,931,81,18,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,76,Apps Withdrawals 5th,1887,1022,80,19,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,77,75,72,1,0,0,0,0,64,0,-1--1--1,,1|(1781,914)|
+1,78,76,72,1,0,0,0,0,64,0,-1--1--1,,1|(1743,960)|
+10,79,SeveniDUsers,2151,235,37,37,6,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,80,Entry Users,373,785,59,20,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,81,Growth Users,630,798,48,21,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,82,HFLP Users,829,798,43,24,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,83,LFHP Users,1035,809,42,26,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,84,Quasi Excellent Users,1264,802,50,20,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,85,Excellent Users,1471,803,51,15,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,86,1,80,1,0,0,0,0,64,0,-1--1--1,,1|(308,568)|
+10,87,Accumulated 7iD Members,380,136,51,24,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,88,48,177,136,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,89,91,87,4,0,0,22,0,0,0,-1--1--1,,1|(296,136)|
+1,90,91,88,100,0,0,22,0,0,0,-1--1--1,,1|(219,136)|
+11,91,0,258,136,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,92,New 7iD Members,258,161,54,17,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,93,2,81,1,0,0,0,0,64,0,-1--1--1,,1|(512,556)|
+1,94,41,85,1,0,0,0,0,64,0,-1--1--1,,1|(1458,547)|
+1,95,39,84,1,0,0,0,0,64,0,-1--1--1,,1|(1237,431)|
+1,96,30,83,1,0,0,0,0,64,0,-1--1--1,,1|(952,552)|
+1,97,28,82,1,0,0,0,0,64,0,-1--1--1,,1|(723,441)|
+10,98,Entry Customers Ratio,415,910,45,27,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,99,Growth Customers Ratio,657,914,36,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,100,HFLP Customers Ratio,844,907,40,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,101,LFHP Customers Ratio,1040,908,41,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,102,Quasi Excellent Customers Ratio,1222,928,41,33,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,103,Excellent Customers Ratio,1444,924,36,28,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,104,80,98,1,0,0,0,0,64,0,-1--1--1,,1|(396,887)|
+1,105,81,99,1,0,0,0,0,64,0,-1--1--1,,1|(630,841)|
+1,106,82,100,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,107,83,101,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,108,84,102,0,0,0,0,0,64,0,-1--1--1,,1|(0,0)|
+1,109,85,103,1,0,0,0,0,64,0,-1--1--1,,1|(1463,849)|
+10,110,Total Users,970,1000,71,19,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,111,110,98,1,0,0,0,0,64,0,-1--1--1,,1|(545,959)|
+1,112,110,99,1,0,0,0,0,64,0,-1--1--1,,1|(711,936)|
+1,113,110,100,1,0,0,0,0,64,0,-1--1--1,,1|(853,935)|
+1,114,110,101,1,0,0,0,0,64,0,-1--1--1,,1|(1027,943)|
+1,115,110,102,1,0,0,0,0,64,0,-1--1--1,,1|(1144,962)|
+1,116,110,103,1,0,0,0,0,64,0,-1--1--1,,1|(1321,962)|
+10,117,HFLP Experience Rate,588,173,48,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,118,117,52,1,0,0,0,0,64,0,-1--1--1,,1|(662,175)|
+10,119,True Loving Experience Rate,1144,316,39,26,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,120,LFHP Experience Rate,703,289,48,24,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,121,Entry Average Purchase Amounts,422,677,50,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,122,Entry Customers Sales,503,762,41,26,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,123,121,122,1,0,0,0,0,128,0,-1--1--1,,1|(483,709)|
+1,124,80,122,1,0,0,0,0,128,0,-1--1--1,,1|(413,752)|
+10,125,Entry Customers Sales Ratio,528,850,48,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,126,Total Sales,889,1080,56,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,127,126,125,1,0,0,0,0,128,0,-1--1--1,,1|(629,991)|
+1,128,122,125,0,0,0,0,0,128,0,-1--1--1,,1|(0,0)|
+10,129,Growth Average Purchase Amounts,639,684,53,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,130,Growth Customers Sales,716,765,48,24,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,131,129,130,1,0,0,0,0,128,0,-1--1--1,,1|(706,705)|
+10,132,Growth Customers Sales Ratio,732,858,38,26,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,133,130,132,0,0,0,0,0,128,0,-1--1--1,,1|(0,0)|
+1,134,81,130,1,0,0,0,0,128,0,-1--1--1,,1|(635,757)|
+1,135,126,132,1,0,0,0,0,128,0,-1--1--1,,1|(771,991)|
+10,136,HFLP Average Purchase Amounts,846,687,55,26,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,137,HFLP Customers Sales,920,774,47,24,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,138,136,137,1,0,0,0,0,128,0,-1--1--1,,1|(905,718)|
+10,139,HFLP Customers Sales Ratio,935,856,50,28,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,140,137,139,0,0,0,0,0,128,0,-1--1--1,,1|(0,0)|
+10,141,LFHP Average Purchase Amounts,1082,683,53,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,142,LFHP Customers Sales,1130,765,52,23,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,143,141,142,1,0,0,0,0,128,0,-1--1--1,,1|(1144,717)|
+10,144,LFHP Customers Sales Ratio,1138,859,46,24,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,145,142,144,0,0,0,0,0,128,0,-1--1--1,,1|(0,0)|
+10,146,Quasi Excellent Average Purchase Amounts,1331,692,61,26,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,147,Quasi Excellent Customers Sales,1365,788,41,33,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,148,146,147,1,0,0,0,0,128,0,-1--1--1,,1|(1393,708)|
+10,149,Quasi Excellent Customers Sales Ratio,1343,887,42,32,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,150,147,149,1,0,0,0,0,128,0,-1--1--1,,1|(1361,825)|
+10,151,Excellent Average Purchase Amounts,1567,677,69,24,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,152,Excellent Customers Sales,1584,773,37,27,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,153,151,152,1,0,0,0,0,128,0,-1--1--1,,1|(1640,685)|
+10,154,Excellent Customers Sales Ratio,1582,869,37,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,155,152,154,1,0,0,0,0,128,0,-1--1--1,,1|(1593,820)|
+1,156,126,139,1,0,0,0,0,128,0,-1--1--1,,1|(883,971)|
+1,157,82,137,1,0,0,0,0,128,0,-1--1--1,,1|(843,745)|
+1,158,83,142,1,0,0,0,0,128,0,-1--1--1,,1|(1048,753)|
+1,159,126,144,1,0,0,0,0,128,0,-1--1--1,,1|(1119,934)|
+1,160,126,149,1,0,0,0,0,128,0,-1--1--1,,1|(1193,1008)|
+1,161,84,147,1,0,0,0,0,128,0,-1--1--1,,1|(1306,743)|
+1,162,85,152,1,0,0,0,0,128,0,-1--1--1,,1|(1534,760)|
+1,163,126,154,1,0,0,0,0,128,0,-1--1--1,,1|(1406,1005)|
+10,164,Stationary Experience　Rate,1498,304,40,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,165,167,30,4,0,0,22,0,0,0,-1--1--1,,1|(753,337)|
+1,166,167,2,100,0,0,22,0,0,0,-1--1--1,,1|(686,337)|
+11,167,0,723,337,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,168,LFHP Experience,723,363,42,18,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,169,120,167,1,0,0,0,0,128,0,-1--1--1,,1|(737,322)|
+1,170,2,168,1,0,0,0,0,128,0,-1--1--1,,1|(699,374)|
+12,171,48,803,29,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,172,174,171,4,0,0,22,0,0,0,-1--1--1,,1|(803,56)|
+1,173,174,28,100,0,0,22,0,0,0,-1--1--1,,1|(803,136)|
+11,174,0,803,81,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,175,Apps Withdrawals 2nd,860,81,49,25,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,176,29,174,1,0,0,0,0,128,0,-1--1--1,,1|(757,85)|
+1,177,28,174,1,0,0,0,0,128,0,-1--1--1,,1|(779,163)|
+1,178,180,41,4,0,0,22,0,0,0,-1--1--1,,1|(1208,299)|
+1,179,180,39,100,0,0,22,0,0,0,-1--1--1,,1|(1208,250)|
+11,180,0,1208,274,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,181,True Loving Experience,1255,274,39,19,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,182,184,39,4,0,0,22,0,0,0,-1--1--1,,1|(1307,254)|
+1,183,184,41,100,0,0,22,0,0,0,-1--1--1,,1|(1307,303)|
+11,184,0,1307,282,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,185,Stationary Experience,1365,282,50,18,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,186,119,180,1,0,0,0,0,128,0,-1--1--1,,1|(1158,288)|
+1,187,39,180,1,0,0,0,0,128,0,-1--1--1,,1|(1187,250)|
+1,188,164,185,1,0,0,0,0,128,0,-1--1--1,,1|(1431,318)|
+1,189,41,184,1,0,0,0,0,128,0,-1--1--1,,1|(1282,304)|
+1,190,192,39,4,0,0,22,0,0,0,-1--1--1,,1|(1269,108)|
+1,191,192,28,100,0,0,22,0,0,0,-1--1--1,,1|(861,108)|
+11,192,0,1064,108,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,193,Attracted Experience,1064,128,86,12,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,194,Attracted Experience Rate,1006,51,54,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,195,28,193,1,0,0,0,0,128,0,-1--1--1,,1|(988,123)|
+12,196,48,1518,208,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,197,199,196,4,0,0,22,0,0,0,-1--1--1,,1|(1467,208)|
+1,198,199,39,100,0,0,22,0,0,0,-1--1--1,,1|(1381,208)|
+11,199,0,1421,208,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,200,Apps Withdrawals 4th,1421,234,53,18,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,201,39,199,1,0,0,0,0,128,0,-1--1--1,,1|(1393,197)|
+1,202,40,199,1,0,0,0,0,128,0,-1--1--1,,1|(1426,185)|
+1,203,194,193,1,0,0,0,0,128,0,-1--1--1,,1|(1061,93)|
+1,204,206,28,4,0,0,22,0,0,0,-1--1--1,,1|(861,146)|
+1,205,206,39,100,0,0,22,0,0,0,-1--1--1,,1|(1269,146)|
+11,206,0,1063,146,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,207,Fulfillment Experience,1063,171,107,17,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,208,Fulfillment Experience　Rate,1185,52,58,18,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,209,208,206,1,0,0,0,0,128,0,-1--1--1,,1|(1133,108)|
+1,210,39,206,1,0,0,0,0,128,0,-1--1--1,,1|(1101,163)|
+1,211,213,39,4,0,0,22,0,0,0,-1--1--1,,1|(1144,225)|
+1,212,213,30,100,0,0,22,0,0,0,-1--1--1,,1|(1091,347)|
+11,213,0,1091,225,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,214,High Satisfying Experience,1091,252,51,19,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,215,217,30,4,0,0,22,0,0,0,-1--1--1,,1|(970,355)|
+1,216,217,39,100,0,0,22,0,0,0,-1--1--1,,1|(1016,209)|
+11,217,0,1016,355,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,218,Dissatisfying Experience,1016,382,54,19,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,219,Dissatisfying Experience Rate,1014,473,48,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,220,219,218,1,0,0,0,0,128,0,-1--1--1,,1|(1023,460)|
+10,221,High Satisfying Experience Rate,951,282,53,27,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,222,221,214,1,0,0,0,0,128,0,-1--1--1,,1|(1015,235)|
+1,223,30,214,1,0,0,0,0,128,0,-1--1--1,,1|(995,308)|
+1,224,39,217,1,0,0,0,0,128,0,-1--1--1,,1|(1122,280)|
+10,225,Apps Withdrawals 2nd,1913,889,80,28,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,226,225,72,1,0,0,0,0,128,0,-1--1--1,,1|(1822,893)|
+10,227,Apps Withdrawals 4th,1899,975,78,18,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,228,227,72,1,0,0,0,0,128,0,-1--1--1,,1|(1768,949)|
+1,229,231,28,4,0,0,22,0,0,0,-1--1--1,,1|(861,437)|
+1,230,231,41,100,0,0,22,0,0,0,-1--1--1,,1|(1203,397)|
+11,231,0,1203,437,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,232,Retrograding HFLP Experience,1203,471,51,26,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,233,Retrograding HFLP Experience Rate,1212,557,63,28,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,234,233,232,1,0,0,0,0,128,0,-1--1--1,,1|(1204,502)|
+1,235,41,231,1,0,0,0,0,128,0,-1--1--1,,1|(1180,417)|
+1,236,238,30,4,0,0,22,0,0,0,-1--1--1,,1|(854,566)|
+1,237,238,41,100,0,0,22,0,0,0,-1--1--1,,1|(1104,342)|
+11,238,0,1104,566,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,239,Retrograding LFHP Experience,1104,601,56,27,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,240,Retrograding LFHP Experience Rate,1204,653,70,26,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,241,240,239,1,0,0,0,0,128,0,-1--1--1,,1|(1111,618)|
+1,242,41,239,1,0,0,0,0,128,0,-1--1--1,,1|(1114,528)|
+10,243,Total Users,2176,301,66,20,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,244,Average Enrollments,313,231,53,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,245,48,174,336,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,246,248,1,4,0,0,22,0,0,0,-1--1--1,,1|(323,336)|
+1,247,248,245,100,0,0,22,0,0,0,-1--1--1,,1|(223,336)|
+11,248,0,269,336,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,249,New Entry,269,355,40,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,250,249,92,1,0,0,0,0,128,0,-1--1--1,,1|(205,214)|
+1,251,244,249,1,0,0,0,0,128,0,-1--1--1,,1|(298,301)|
+///---\\\
+:L<%^E!@
+1:semiexcelsalesratepfm.vdfx
+1:lawfreqhighsalesratepfm.vdfx
+1:highfreqlawsalesratepfm.vdfx
+1:growthsalesratepfm.vdfx
+1:excelsalesratepfm.vdfx
+1:entrysalesratepfm.vdfx
+1:SeveniDuserspfm.vdfx
+1:semiexcelratepfm.vdfx
+1:lawfreqhighratepfm.vdfx
+1:highfreqlawratepfm.vdfx
+1:growthratepfm.vdfx
+1:excelratepfm.vdfx
+1:entryratepfm.vdfx
+1:SeveniDusers.vdfx
+4:Time
+5:Accumulated 7iD Members
+9:calc_200517
+19:75,0
+24:0
+25:156
+26:156
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+11:セブン定常平均購買額最適化_200306.voc
+12:7idDef_200223.vpd
+13:entryratepfm.vdfx,entrysalesratepfm.vdfx,excelratepfm.vdfx,excelsalesratepfm.vdfx,growthratepfm.vdfx,growthsalesratepfm.vdfx,highfreqlawratepfm.vdfx,highfreqlawsalesratepfm.vdfx,lawfreqhighratepfm.vdfx,lawfreqhighsalesratepfm.vdfx,semiexcelratepfm.vdfx,semiexcelsalesratepfm.vdfx,SeveniDusers.vdfx,SeveniDuserspfm.vdfx
+23:0
+15:1,0,0,0,0,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:3
+41:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Vensim Sans JP|14||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
