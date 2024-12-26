@@ -21,4 +21,5 @@ Vensimは、Version10以降、モデルの表記法を独自形式に変更し�
 定常モデルによる感度分析 -> CJ_Stationary_Sens_j.mdl
 
 逓増モデルによる感度分析 -> CJ_Increment_Sens_j.mdl
-
+#
+![Stationarymodel_j](https://github.com/user-attachments/assets/d7e68ce7-82b1-4b0d-9a9b-ecca0e636ee0)
