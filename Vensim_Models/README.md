@@ -1,3 +1,5 @@
+Kimura, M. (2022), "Customer segment transition through the customer loyalty program", Asia Pacific Journal of Marketing and Logistics, Vol. 34 No. 3, pp. 611-626. https://doi.org/10.1108/APJML-09-2020-0630
+#
 The following is written in Japanese:
 
 x.mdlファイルは、Ventana Systems社Vensim用SDモデルファイルである。無償ソフトウェアのVensim PLEを利用した実行が可能。モデル内の変数と定数名は日本語で表記されている。
