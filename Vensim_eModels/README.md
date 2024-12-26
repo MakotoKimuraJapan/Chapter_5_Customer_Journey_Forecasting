@@ -24,4 +24,4 @@ Sensitivity analysis using stationary model -> CJ_Stationary_Sens.mdl
 
 Sensitivity analysis using incremental model -> CJ_Increment_Sens.mdl
 
-![Chapter_5_Users_Estimation_j](https://github.com/user-attachments/assets/01820895-41fb-409e-9d0f-a1a18bf14426)
+![Chapter_5_IncrementalModel_e](https://github.com/user-attachments/assets/4100a59c-8a3f-4130-b0c8-ad54c06552f2)
