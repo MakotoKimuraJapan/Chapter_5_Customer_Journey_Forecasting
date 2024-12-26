@@ -12,3 +12,5 @@ x.mdlファイルは、Ventana Systems社Vensim用SDモデルファイルであ�
 Vensimは、Version10以降、モデルの表記法を独自形式に変更した。従来のシステム・ダイナミクスの表記法に変更してモデルを表示するためには、以下の指定を行う。
 
 ［ビュー］アイコン→「伝統的なスケッチスタイル」を選択する。
+#
+![Chapter_5_Increment_Model](https://github.com/user-attachments/assets/6236c12c-593f-473d-af60-163de970e7fc)
