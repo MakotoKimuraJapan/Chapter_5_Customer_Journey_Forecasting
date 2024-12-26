@@ -14,3 +14,5 @@ Vensimは、Version10以降、モデルの表記法を独自形式に変更し�
 ［ビュー］アイコン→「伝統的なスケッチスタイル」を選択する。
 #
 ![Chapter_5_Increment_Model](https://github.com/user-attachments/assets/6236c12c-593f-473d-af60-163de970e7fc)
+
+![Chapter_5_Users_Estimation_j](https://github.com/user-attachments/assets/01820895-41fb-409e-9d0f-a1a18bf14426)
