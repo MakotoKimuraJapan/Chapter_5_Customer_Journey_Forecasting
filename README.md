@@ -43,7 +43,7 @@ Vensim changed the model notation to a unique format from Version 10 onwards. To
 Select the [View] icon → "Traditional sketch style".
 
 #
-English model ->  CJ_Stationary_e.mdl
+English models ->  Vemsim_eModels
 
 Approximation using stationary model -> CJ_Stationary.mdl
 
