@@ -12,6 +12,18 @@ x.mdlファイルは、Ventana Systems社Vensim用SDモデルファイルであ�
 Vensimは、Version10以降、モデルの表記法を独自形式に変更した。従来のシステム・ダイナミクスの表記法に変更してモデルを表示するためには、以下の指定を行う。
 
 ［ビュー］アイコン→「伝統的なスケッチスタイル」を選択する。
+
+定常モデルによる近似  -> CJ_Stationary_j.mdl
+
+逓増モデルによる近似 ->  CJ_Increment_j.mdl
+
+定常モデルによる予測 -> CJ_Stationary_Predict_j.mdl
+
+逓増モデルによる予測 -> CJ_Increment_Predict_j.mdl
+
+定常モデルによる感度分析 -> CJ_Stationary_Sens_j.mdl
+
+逓増モデルによる感度分析 -> CJ_Increment_Sens_j.mdl
 #
 ![Chapter_5_Increment_Model](https://github.com/user-attachments/assets/6236c12c-593f-473d-af60-163de970e7fc)
 
@@ -31,6 +43,8 @@ Vensim changed the model notation to a unique format from Version 10 onwards. To
 Select the [View] icon → "Traditional sketch style".
 
 #
+English model ->  CJ_Stationary_e.mdl
+
 Approximation using stationary model -> CJ_Stationary.mdl
 
 Approximation using incremental model -> CJ_Increment.mdl
@@ -43,5 +57,3 @@ Sensitivity analysis using stationary model -> CJ_Stationary_Sens.mdl
 
 Sensitivity analysis using incremental model -> CJ_Increment_Sens.mdl
 
-models
-![Chapter_5_Users_Estimation_j](https://github.com/user-attachments/assets/01820895-41fb-409e-9d0f-a1a18bf14426)
