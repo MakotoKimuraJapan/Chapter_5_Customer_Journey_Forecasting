@@ -49,11 +49,4 @@ Approximation using stationary model -> CJ_Stationary_e.mdl
 
 Approximation using incremental model -> CJ_Increment_e.mdl
 
-Prediction using stationary model -> CJ_Stationary_Predict_e.mdl
-
-Prediction using incremental model -> CJ_Increment_Predict_e.mdl
-
-Sensitivity analysis using stationary model -> CJ_Stationary_Sens_e.mdl
-
-Sensitivity analysis using incremental model -> CJ_Increment_Sens_e.mdl
 
