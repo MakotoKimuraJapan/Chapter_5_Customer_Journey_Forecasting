@@ -45,15 +45,15 @@ Select the [View] icon → "Traditional sketch style".
 #
 English models ->  Vemsim_eModels
 
-Approximation using stationary model -> CJ_Stationary.mdl
+Approximation using stationary model -> CJ_Stationary_e.mdl
 
-Approximation using incremental model -> CJ_Increment.mdl
+Approximation using incremental model -> CJ_Increment_e.mdl
 
-Prediction using stationary model -> CJ_Stationary_Predict.mdl
+Prediction using stationary model -> CJ_Stationary_Predict_e.mdl
 
-Prediction using incremental model -> CJ_Increment_Predict.mdl
+Prediction using incremental model -> CJ_Increment_Predict_e.mdl
 
-Sensitivity analysis using stationary model -> CJ_Stationary_Sens.mdl
+Sensitivity analysis using stationary model -> CJ_Stationary_Sens_e.mdl
 
-Sensitivity analysis using incremental model -> CJ_Increment_Sens.mdl
+Sensitivity analysis using incremental model -> CJ_Increment_Sens_e.mdl
 
